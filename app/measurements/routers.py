@@ -5,7 +5,37 @@ from sqlalchemy.orm import Session
 from app.measurements import crud, models, schemas
 from ..database import get_db
 
+
+
+tags_metadata = [
+    {
+        "name": "Measurements",
+        "description": "Operations with measurements. Allows for adding new measurements, retrieving existing measurements, and deleting measurements.",
+        "externalDocs": {
+            "description": "Find out more about measurements",
+            "url": "https://yourdocumentationlink.com/measurements",
+        },
+    },
+]
+
+
+
+
+
+
 router = APIRouter()
+
+
+
+
+
+
+
+
+
+
+
+
 
 @router.post("/measurements/", response_model=schemas.Measurement)
 def create_measurement(measurement: schemas.MeasurementCreate, db: Session = Depends(get_db)):

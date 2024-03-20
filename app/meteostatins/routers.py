@@ -6,6 +6,26 @@ from typing import List
 from app.meteostatins import crud, schemas
 from ..database import get_db
 
+
+tags_metadata = [
+    {
+        "name": "Meteostations",
+        "description": "Operations related to meteostations. Allows managing meteostations, including creating, reading, updating, and deleting meteostations, as well as managing sensors associated with them.",
+        "externalDocs": {
+            "description": "Find out more about working with meteostations",
+            "url": "https://yourdocumentationlink.com/meteostations",
+        },
+    },
+]
+
+
+
+
+
+
+
+
+
 router = APIRouter()
 
 @router.post("/meteostatins/", response_model=schemas.Meteostatin)

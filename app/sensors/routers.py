@@ -5,6 +5,30 @@ from app.sensors import crud, schemas
 from app import database
 
 
+tags_metadata = [
+    {
+        "name": "sensors",
+        "description": "Operations related to sensors. Allows for creating, reading, updating, and deleting information about sensors.",
+        "externalDocs": {
+            "description": "Find out more about working with sensors",
+            "url": "https://yourdocumentationlink.com/sensors",
+        },
+    },
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 router = APIRouter()
 
 @router.post("/sensors/", response_model=schemas.Sensor)
