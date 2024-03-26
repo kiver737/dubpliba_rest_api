@@ -1,0 +1,46 @@
+##file: noinspection YAMLSchemaValidation
+#version: '3.8'
+#services:
+#  mytest_api9:
+#    build: .
+#    ports:
+#      - "8000:8000"
+#    container_name: api
+#  db:
+#    image: postgres:latest
+#    environment:
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: 123
+#      POSTGRES_DB: mytestdb
+#    volumes:
+#        - postgres_data:/var/lib/postgresql/data
+#        - ./db-dump/all_dumpbdtest.sql:/docker-entrypoint-initdb.d/mytestdb_dump.sql
+#volumes:
+#  postgres_data:
+
+
+version: '3.8'
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: mytestdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db-dump/backup_name.dump:/docker-entrypoint-initdb.d/mytestdb_dump.sql
+    expose:
+      - 5432
+
+
+  mytest_api:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+
+volumes:
+  postgres_data:
