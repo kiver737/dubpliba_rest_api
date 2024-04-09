@@ -43,7 +43,7 @@ jobs:
       - name: testing
         run: |
           docker compose exec -T mytest_api pip3 install pytest
-          docker compose exec -T mytest_api pytest
+          docker compose exec -T mytest_api pytest test_main.py
           
         
       
