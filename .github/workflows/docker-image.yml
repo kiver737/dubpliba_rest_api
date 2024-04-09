@@ -45,7 +45,7 @@ jobs:
           ls
           pwd
           docker compose exec -T mytest_api pip3 install pytest
-          docker compose exec -T mytest_api pytest /home/kiver/actions-runner/_work/finish_db_api_restapit_shukov/finish_db_api_restapit_shukov/test_main.py
+          docker compose exec -T mytest_api pytest /code/app/test_main.py
           
         
       
