@@ -41,7 +41,8 @@ jobs:
       - name: pull and deploy 
         run: docker compose pull && docker compose up -d
       - name: testing
-        run: |
+        run: | 
+          ls
           docker compose exec -T mytest_api pip3 install pytest
           docker compose exec -T mytest_api pytest test_main.py
           
