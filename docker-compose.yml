@@ -35,7 +35,7 @@ services:
 
 
   mytest_api:
-    image: 96717699070327050274637/my-api
+    build: .
     ports:
       - "8000:8000"
     depends_on:
